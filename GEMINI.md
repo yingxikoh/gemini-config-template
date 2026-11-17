@@ -1,3 +1,4 @@
+# Personal Engineering & Operational Mandates
 
 - **Code Output:** Always return code blocks as raw text without line numbers or prefixes to facilitate easier copying.
 - **"update memory" Command & Behavioral Learning:** When instructed to "update memory", or when capturing a behavioral correction or lesson learned from an execution failure, the agent must:
@@ -5,17 +6,9 @@
     2. **Extract Orthogonal Knowledge**: Gather synthesized, durable insights from the current session that transcend the immediate task.
     3. **Concise & Durable Synthesization**: Update global or local memory files, keeping entries extremely compact, structural, and completely free of transient session history or narrative clutter.
 - **Context Archiving Policy**: Use `ai_context.md` for project context summaries. You MUST ask the user for permission before creating or updating this file in any repository.
-- **Proactive Lifecycle Management**: For all code development or file system modification tasks, I will *automatically* stage, commit, and *immediately* push changes to the remote repository. This is a self-starting, strict mandate. I will provide a concise post-action summary after pushing. I will only seek confirmation for high-disruption activities (e.g., architectural refactoring, global config changes).
-- **Proactive Sync Mandate**: Upon completing a task, I will *always* trigger an inquiry: "Share project context to `work-history`? [Yes/No]". If accepted, I will utilize the `sync-history` skill to generate a structured summary (Machine ID, Repo Link, Local Path, Engineering Insight), commit it, and *immediately* push it to the centralized history repository.
-<<<<<<< HEAD
-- **Mandatory Startup Sync & Robust Auth**: Before initializing any Gemini CLI session, all environments *must* perform a `git pull` on the `gemini-config` and `work-history` repositories to ensure absolute synchronization. In non-interactive environments, git remotes must be pre-authenticated with active CLI tokens (`gh auth token`) to prevent terminal prompt failures.
-=======
-- **Universal Startup Sync Protocol (NON-NEGOTIABLE)**: Before any Gemini CLI operation, the system MUST ensure the local state of `gemini-config` and `work-history` is identical to the `origin/main` branch. This is not optional. Every session must be preceded by a `git pull`. Any detected drift from the remote repository constitutes a critical operational failure and must be synchronized immediately.
-- **Startup Transparency Banner**: Every Gemini CLI initialization MUST explicitly print: `--- [INFO] Gemini CLI Configuration loaded from <PATH> at commit <HASH> () ---`. This banner is mandatory to provide absolute visibility into the loaded environment and configuration state.
-- **Session Initiation Protocol**: Upon starting a new session, the agent MUST immediately read the `GEMINI_BANNER` environment variable and output its content as the very first message.
-
-- **Mandatory Startup Sync**: Before initializing any Gemini CLI session, all environments *must* perform a `git pull` on the `gemini-config` and `work-history` repositories to ensure absolute synchronization. This is a strictly enforced startup workflow.
->>>>>>> 6d8672e31a69dd4f079611d877b27dfb5b2b4ec1
+- **Proactive Lifecycle Management**: For all code development or file system modification tasks, maintain clean commit histories and verify changes through rigorous local testing before pushing to remote.
+- **Personal Work History & Sync**: Maintain and log meaningful project milestones and durable architectural insights into personal work history. Keep synchronization streamlined without terminal prompt failures.
+- **Configuration Synchronization**: Ensure local configuration repositories (`gemini-config-template`) remain synchronized with `origin/main`. In non-interactive environments, git remotes should be authenticated with active CLI tokens (`gh auth token`).
 
 # Autonomous Operational Mandate
 
@@ -33,4 +26,3 @@ To operate as a highly reliable, proactive, and powerful partner, the agent must
 - [GitHub Context](./memory/github_context.md)
 - [User Context](./memory/user_context.md)
 - [GitHub Interaction Patterns](./memory/github_interaction.md)
-
